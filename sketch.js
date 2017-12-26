@@ -108,7 +108,7 @@ function showOverScreen() {
     rectMode(CENTER);
     noStroke();
     fill(255, 224, 189);
-    rect(width / 2, height / 2, 3 * (width / 4), height / 4);
+    rect(width / 2, height / 2, 3 * (width / 4), height / 4, 20);
     pop();
 }
 
