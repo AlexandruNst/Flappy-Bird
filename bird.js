@@ -8,7 +8,8 @@ function Bird() {
 
 
     this.show = function() {
-        noStroke();
+        stroke(51);
+        strokeWeight(1);
         fill(255);
         ellipse(this.x, this.y, this.d, this.d);
     }
@@ -18,14 +19,21 @@ function Bird() {
     }
 
     this.update = function() {
+        this.y += gravity;
+        gravity += 0.5;
+    }
 
-
-        if (this.y + this.r >= height) {
-            gameOver();
-            //this.y = height - this.r;
-        } else {
-            this.y += gravity;
-            gravity += 0.5;
+    this.hits = function(pipe) {
+        if (this.x + this.r >= pipe.x && this.x - this.r <= (pipe.x + pipe.w) && (this.y - this.r <= pipe.blankY || this.y + this.r >= (pipe.blankY + pipe.blankH))) {
+            return true;
         }
+    }
+
+    this.offScreen = function() {
+        if (this.y + this.r >= height) {
+            return true;
+        }
+
+        return false;
     }
 }

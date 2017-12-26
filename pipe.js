@@ -10,11 +10,10 @@ function Pipe() {
     this.show = function() {
         noStroke();
         fill(255);
-        rect(this.x, this.y, this.w, height);
-
-        fill(51);
-        rect(this.x, this.blankY, this.w, this.blankH);
-
+        // upper pipe
+        rect(this.x, this.y, this.w, this.blankY);
+        // lower pipe
+        rect(this.x, this.blankY + this.blankH, this.w, height - this.blankH);
     }
 
     this.update = function() {
