@@ -36,4 +36,11 @@ function Bird() {
 
         return false;
     }
+
+    this.reset = function() {
+        gravity = 1;
+        this.x = this.r + 30;
+        this.y = height / 2;
+
+    }
 }
