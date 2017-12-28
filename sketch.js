@@ -11,6 +11,7 @@ var initCountDown = false;
 
 function setup() {
     createCanvas(600, 900);
+    //createCanvas(windowWidth, windowHeight);
     bird = new Bird();
     // newGame();
     pipes = [];
